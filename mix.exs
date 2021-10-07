@@ -46,6 +46,7 @@ defmodule NervesLivebook.MixProject do
       {:vega_lite, "~> 0.1"},
       {:kino, "~> 0.3"},
       {:phoenix_pubsub, "~> 2.0"},
+      {:timex, "~> 3.7.6"},
       {:circuits_uart, "~> 1.3", targets: @all_targets},
       {:circuits_gpio, "~> 0.4", targets: @all_targets},
       {:circuits_i2c, "~> 0.3", targets: @all_targets},
@@ -57,6 +58,10 @@ defmodule NervesLivebook.MixProject do
       {:scroll_hat, "~> 0.1", targets: @rpi_targets},
       {:input_event, "~> 0.4", targets: @all_targets},
       {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx"},
+      {:picam, "~> 0.4.0"},
+      {:scenic, github: "boydm/scenic", override: true},
+      {:scenic_driver_inky, "~> 1.0.0", targets: @all_targets},
+      {:scenic_driver_glfw, "~> 0.10", targets: :host},
 
       # Nerves system dependencies
       {:nerves_system_rpi, "~> 1.16", runtime: false, targets: :rpi},

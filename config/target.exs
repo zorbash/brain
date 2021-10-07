@@ -14,6 +14,8 @@ config :shoehorn,
 
 config :logger, backends: [RingLogger, RamoopsLogger]
 
+config :tzdata, :data_dir, "/tmp/elixir_tzdata_data"
+
 # Nerves Runtime can enumerate hardware devices and send notifications via
 # SystemRegistry. This slows down startup and not many programs make use of
 # this feature.
@@ -73,6 +75,25 @@ config :mdns_lite,
 config :vintage_net,
   regulatory_domain: "US",
   additional_name_servers: [{127, 0, 0, 53}]
+
+config :nerves_livebook, :viewport, %{
+  name: :main_viewport,
+  default_scene: {NervesLivebook.Scenes.Main, nil},
+  size: {400, 300},
+  opts: [scale: 1.0],
+  drivers: [
+    %{
+      module: ScenicDriverInky,
+      opts: [
+        type: :what,
+        accent: :red,
+        opts: %{
+          border: :black
+        }
+      ]
+    }
+  ]
+}
 
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

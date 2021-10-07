@@ -13,3 +13,15 @@ config :vintage_net,
 
 # Turn off ntp
 config :nerves_time, servers: []
+
+config :nerves_livebook, :viewport, %{
+  name: :main_viewport,
+  default_scene: {NervesLivebook.Scenes.Main, nil},
+  size: {400, 300},
+  opts: [scale: 1.0],
+  drivers: [
+    %{
+      module: Scenic.Driver.Glfw
+    }
+  ]
+}

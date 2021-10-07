@@ -17,13 +17,24 @@ defmodule NervesLivebook.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: NervesLivebook.Supervisor]
 
-    children = [
-      # Children for all targets
-      # Starts a worker by calling: NervesLivebook.Worker.start_link(arg)
-      # {NervesLivebook.Worker, arg},
-    ]
+    Supervisor.start_link(children(target()), opts)
+  end
 
-    Supervisor.start_link(children, opts)
+  defp children(:host) do
+    main_viewport_config = Application.get_env(:nerves_livebook, :viewport)
+
+    [
+      {Scenic, viewports: [main_viewport_config]}
+    ]
+  end
+
+  defp children(_target) do
+    main_viewport_config = Application.get_env(:nerves_livebook, :viewport)
+
+    [
+      {Scenic, viewports: [main_viewport_config]},
+      {Picam.Camera, []}
+    ]
   end
 
   defp initialize_data_directory() do
