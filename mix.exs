@@ -56,7 +56,7 @@ defmodule NervesLivebook.MixProject do
       {:ramoops_logger, "~> 0.1", targets: @all_targets},
       {:bmp280, "~> 0.2", targets: @all_targets},
       {:scroll_hat, "~> 0.1", targets: @rpi_targets},
-      {:input_event, "~> 0.4", targets: @all_targets},
+      {:input_event, "~> 1.0", targets: @all_targets},
       {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx"},
       {:picam, "~> 0.4.0"},
       {:scenic, github: "boydm/scenic", override: true},
