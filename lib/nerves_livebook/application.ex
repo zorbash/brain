@@ -43,7 +43,7 @@ defmodule NervesLivebook.Application do
 
     # Best effort create everything
     _ = File.mkdir_p(destination_dir)
-    Enum.each(["welcome.livemd", "samples"], &symlink(source_dir, destination_dir, &1))
+    Enum.each(["welcome.livemd", "brain.livemd", "samples"], &symlink(source_dir, destination_dir, &1))
   end
 
   defp symlink(source_dir, destination_dir, filename) do

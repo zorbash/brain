@@ -1,0 +1,20 @@
+# Brain
+
+## Refresh
+
+To refresh the screen run:
+
+```elixir
+send(:main_scene, :update)
+```
+
+## Search Notes
+
+<!-- livebook:{"livebook_object":"cell_input","name":"search","reactive":true,"type":"text","value":""} -->
+
+```elixir
+query = IO.gets("search: ") |> String.trim()
+notes = NervesLivebook.Notes.all() |> Enum.filter(&String.contains?(&1.text, query))
+
+Kino.DataTable.new(notes)
+```
