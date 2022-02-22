@@ -49,14 +49,15 @@ defmodule NervesLivebook.Scenes.Main do
 
   defp header(graph) do
     # TODO: Move timezone to config
-    now = Timex.now("Europe/London")
+    %{month: month} = now = Timex.now("Europe/London")
 
+    quarter = ceil(month / 3.0)
     {_year, week} = Timex.iso_week(now)
     {:ok, datetime} = Timex.format(now, "%a %e %b %R", :strftime)
 
     graph
     |> rectangle({width(), 24}, fill: :black)
-    |> text("Week #{week}", font_size: 18, fill: :white, t: {5, 17}, text_align: :left)
+    |> text("Q#{quarter} | W#{week}", font_size: 18, fill: :white, t: {5, 17}, text_align: :left)
     |> text(temperature(), font_size: 18, fill: :white, t: {165, 17}, text_align: :left)
     |> text(datetime, font_size: 18, fill: :white, t: {393, 17}, text_align: :right)
   end
