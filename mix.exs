@@ -32,19 +32,19 @@ defmodule NervesLivebook.MixProject do
   defp deps do
     [
       # Dependencies for host and target
-      {:nerves, "~> 1.7.4", runtime: false},
-      {:shoehorn, "~> 0.7.0"},
+      {:nerves, "~> 1.7.15", runtime: false},
+      {:shoehorn, "~> 0.8.0"},
       {:ring_logger, "~> 0.8.1"},
       {:toolshed, "~> 0.2.13"},
       {:jason, "~> 1.2"},
-      {:nerves_runtime, "~> 0.11.3"},
+      {:nerves_runtime, "~> 0.11.8"},
       {:nerves_pack, "~> 0.6.0"},
-      {:livebook, github: "livebook-dev/livebook", branch: "main", only: [:dev, :prod]},
+      {:livebook, "~> 0.5.2", only: [:dev, :prod]},
       {:plug, "~> 1.12"},
 
       # Pull in commonly used libraries as a convenience to users.
       {:vega_lite, "~> 0.1"},
-      {:kino, "~> 0.3"},
+      {:kino, "~> 0.5.2"},
       {:phoenix_pubsub, "~> 2.0"},
       {:timex, "~> 3.7.6"},
       {:circuits_uart, "~> 1.3", targets: @all_targets},
@@ -56,7 +56,7 @@ defmodule NervesLivebook.MixProject do
       {:ramoops_logger, "~> 0.1", targets: @all_targets},
       {:bmp280, "~> 0.2", targets: @all_targets},
       {:scroll_hat, "~> 0.1", targets: @rpi_targets},
-      {:input_event, "~> 0.4", targets: @all_targets},
+      {:input_event, "~> 1.0.0", targets: @all_targets},
       {:nx, "~> 0.1.0-dev", github: "elixir-nx/nx", sparse: "nx"},
       {:picam, "~> 0.4.0"},
       {:scenic, github: "boydm/scenic", override: true},
