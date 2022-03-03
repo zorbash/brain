@@ -51,7 +51,7 @@ defmodule NervesLivebook.MixProject do
       {:circuits_gpio, "~> 0.4", targets: @all_targets},
       {:circuits_i2c, "~> 0.3", targets: @all_targets},
       {:circuits_spi, "~> 0.1", targets: @all_targets},
-      {:nerves_key, "~> 0.5.5", targets: @all_targets},
+      {:nerves_key, "~> 1.1.0", targets: @all_targets},
       {:pigpiox, "~>0.1", targets: @rpi_targets},
       {:ramoops_logger, "~> 0.1", targets: @all_targets},
       {:bmp280, "~> 0.2", targets: @all_targets},
