@@ -38,7 +38,7 @@ defmodule NervesLivebook.MixProject do
       {:toolshed, "~> 0.2.26"},
       {:jason, "~> 1.2"},
       {:nerves_runtime, "~> 0.11.8"},
-      {:nerves_pack, "~> 0.6.0"},
+      {:nerves_pack, "~> 0.7.0"},
       {:livebook, "~> 0.5.2", only: [:dev, :prod]},
       {:plug, "~> 1.12"},
 
